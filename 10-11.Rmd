@@ -1,0 +1,49 @@
+---
+title: "10-11"
+author: "Diya Patel"
+date: "2024-06-14"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(readxl)
+```
+
+``` {r, echo=TRUE}
+# Load the dataset
+dataset_path <- "/Users/diya/Downloads/Football_dataset.xlsx"
+football_data <- read_excel(dataset_path)
+
+# Display the first few rows of the dataset
+head(football_data)
+```
+
+``` {r, echo=TRUE}
+# 10. Display current column names
+print('Current Columns:')
+colnames(football_data)
+
+# Rename some of the columns
+football_data <- football_data %>%
+  rename(
+    player_full_name = player_name,
+    goals_scored = goals,
+    minutes = minutes_played
+  )
+
+# Display new column names
+print('Updated Columns:')
+colnames(football_data)
+```
+
+``` {r, echo=TRUE}
+# 11. Add new variable by multiplying an existing column by 2
+football_data <- football_data %>%
+  mutate(double_goals = goals_scored * 2)
+
+# Display the first few rows of the updated dataset
+head(football_data)
+```

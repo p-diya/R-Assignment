@@ -14,7 +14,7 @@ library(readxl)
 
 ``` {r, echo=TRUE}
 # Load the dataset
-dataset_path <- "/Users/diya/Downloads/Football_dataset.xlsx"
+dataset_path <- "<path_name>"
 football_data <- read_excel(dataset_path)
 
 # Display the first few rows of the dataset
